@@ -35,6 +35,9 @@ dependencies {
     // data, domain 모듈 의존
     implementation project(':data')
     implementation project(':domain')
+    // app v7
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.6.0'
