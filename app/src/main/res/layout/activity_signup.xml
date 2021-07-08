@@ -78,15 +78,16 @@
                                 android:textSize="16sp" />
 
                             <Button
-                                android:gravity="center"
+                                android:id="@+id/overlap"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:background="@drawable/login_buttonshape"
-                                android:textSize="24sp"
+                                android:gravity="center"
+                                android:text="중복확인"
                                 android:textAllCaps="false"
                                 android:textColor="#ffffff"
-                                android:text="중복확인" />
+                                android:textSize="24sp" />
 
                         </LinearLayout>
 
@@ -200,7 +201,7 @@
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <RadioGroup
-                        android:id="@+id/radioGroup"
+                        android:id="@+id/genderGroup"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginBottom="20dp"
