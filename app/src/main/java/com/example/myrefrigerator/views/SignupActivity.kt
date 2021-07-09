@@ -26,7 +26,7 @@ class SignupActivity : BaseView<ActivitySignupBinding, SignupViewModel>() {
     override val layoutResourceId: Int
         get() = R.layout.activity_signup
 
-    override val viewModel: SignupViewModel by viewModel()                                          // 이 부분??
+    override val viewModel: SignupViewModel = SignupViewModel()                                     // 이 부분??
 
     override fun initStartView() {
         initUI()
@@ -56,8 +56,9 @@ class SignupActivity : BaseView<ActivitySignupBinding, SignupViewModel>() {
         overlapBtn = findViewById<Button>(R.id.overlap)
     }
     fun setListener(){
-        overlapBtn.setOnClickListener { view->{
-            // 뷰 모델에 있는 명령어 사용
-        } };
+        overlapBtn.setOnClickListener {
+            // 아이디 중복
+            viewModel.sendSignUpInfo("쿼리", 35)
+        };
     }
 }

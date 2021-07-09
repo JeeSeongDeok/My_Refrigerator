@@ -13,9 +13,9 @@ class DataModelImpl: DataModel{
     }
 }
 class SignupViewModel(private val model:DataModel) : BaseViewModel() {
-    fun connectServer(id: String, pw:String){
-        // API에 서버 연결
-        // 대충 연결 후
-        // 넘기자!
+    private val TAG = "SignUpViewModel"
+
+    fun sendSignUpInfo(query: String, age:Int){
+        // 연결하는 부분 OkHttp3 써서 백엔드랑 연결
     }
 }
