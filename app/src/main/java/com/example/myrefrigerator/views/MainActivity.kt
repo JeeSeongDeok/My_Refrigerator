@@ -1,9 +1,10 @@
-package com.example.myrefrigerator
+package com.example.myrefrigerator.views
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import androidx.appcompat.widget.Toolbar
+import com.example.myrefrigerator.R
 
 
 class MainActivity : AppCompatActivity() {
