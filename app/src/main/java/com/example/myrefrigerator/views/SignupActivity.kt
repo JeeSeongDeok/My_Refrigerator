@@ -5,8 +5,11 @@ import android.os.PersistableBundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myrefrigerator.R
+import com.example.myrefrigerator.base.BaseView
+import com.example.myrefrigerator.databinding.ActivitySignupBinding
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class SignupActivity : AppCompatActivity() {
+class SignupActivity : BaseView<ActivitySignupBinding, SignupViewModel>() {
     private lateinit var id:EditText
     private lateinit var pass:EditText
     private lateinit var repass:EditText
@@ -20,12 +23,23 @@ class SignupActivity : AppCompatActivity() {
     private lateinit var agreeBtn3:RadioButton                                                      // 마케팅정보 수신 동의
     private lateinit var genderGroup:RadioGroup
     private lateinit var overlapBtn:Button
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
-        setContentView(R.layout.activity_signup)
+    override val layoutResourceId: Int
+        get() = R.layout.activity_signup
+
+    override val viewModel: SignupViewModel by viewModel()                                          // 이 부분??
+
+    override fun initStartView() {
         initUI()
+    }
+
+    override fun initDataBinding() {
+
+    }
+
+    override fun initAfterBinding() {
         setListener()
     }
+
     fun initUI(){
         id = findViewById<EditText>(R.id.id)
         pass = findViewById<EditText>(R.id.pass)
