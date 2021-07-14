@@ -64,6 +64,7 @@ class SignupActivity : AppCompatActivity(), View.OnClickListener {
                 Log.d(SignupActivity.TAG, "LoginActivity - onCreate Call()")
                 blank_edit()
             }
+            //생년월일 선택
             binding.birthBtn -> {
                 var today = GregorianCalendar()
                 var year: Int = today.get(Calendar.YEAR)

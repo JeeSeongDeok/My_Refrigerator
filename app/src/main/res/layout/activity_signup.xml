@@ -221,7 +221,7 @@
                                     android:layout_weight="1"
                                     android:background="@drawable/login_buttonshape"
                                     android:gravity="center"
-                                    android:text="달력보기"
+                                    android:text="달력선택하기"
                                     android:textAllCaps="false"
                                     android:textColor="#ffffff"
                                     android:textSize="24sp" />
