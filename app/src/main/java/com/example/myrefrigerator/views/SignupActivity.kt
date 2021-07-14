@@ -27,6 +27,8 @@ class SignupActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(binding.root)
         // Log
         Log.e(TAG, "SignupActivity - onCreate Call()")
+        // setListener
+        binding.signup.setOnClickListener(this)
     }
     fun blank_edit(){
         if(binding.id.length() == 0)

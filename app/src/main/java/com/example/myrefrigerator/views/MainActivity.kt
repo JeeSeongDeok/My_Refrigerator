@@ -4,26 +4,30 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import androidx.appcompat.widget.Toolbar
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI
 import com.example.myrefrigerator.R
+import com.example.myrefrigerator.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity() {
     companion object {
         const val TAG: String = "로그"
     }
+    private lateinit var mBinding:ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        var toolbar: Toolbar = findViewById(R.id.toolbar)
-        setSupportActionBar(toolbar)
-        supportActionBar?.setDisplayShowTitleEnabled(false)
-        // ↓툴바에 홈버튼을 활성화 getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        // 바인딩
+        mBinding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(mBinding.root)
+
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.my_nav_host) as NavHostFragment
+
+        val navController = navHostFragment.navController
+
+        NavigationUI.setupWithNavController(mBinding.myBottomNav, navController)
     }
-    //액션버튼 메뉴 액션바에 집어 넣기
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.toolbar_menu, menu)
-        return true
-    }
+
 
 }

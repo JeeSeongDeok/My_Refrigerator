@@ -33,7 +33,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         when(v){
             // 회원가입 창을 불렀을 경우
             binding.signup-> {
-                val intent = Intent(this, SignupActivity)
+                val intent = Intent(this@LoginActivity, SignupActivity::class.java)
                 startActivity(intent)
             }
                 // Call 회원가입창
