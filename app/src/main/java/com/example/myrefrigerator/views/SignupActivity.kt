@@ -1,13 +1,19 @@
 package com.example.myrefrigerator.views
 
 
+import android.app.DatePickerDialog
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.DatePicker
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import com.example.myrefrigerator.R
 import com.example.myrefrigerator.databinding.ActivitySignupBinding
+import org.koin.androidx.viewmodel.ext.android.ViewModelStoreOwnerDefinition
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import java.util.*
 
 
 class SignupActivity : AppCompatActivity(), View.OnClickListener {
@@ -20,6 +26,12 @@ class SignupActivity : AppCompatActivity(), View.OnClickListener {
     companion object {
         const val TAG: String = "로그"
     }
+    //달력선택
+    var today = GregorianCalendar()
+    var year: Int = today.get(Calendar.YEAR)
+    var month: Int = today.get(Calendar.MONTH)
+    var date: Int = today.get(Calendar.DATE)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         // XML 연결
@@ -27,31 +39,60 @@ class SignupActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(binding.root)
         // Log
         Log.e(TAG, "SignupActivity - onCreate Call()")
+        // setListener
+        binding.signup.setOnClickListener(this)
+        binding.overlap.setOnClickListener(this)
+        binding.birthBtn.setOnClickListener(this)
     }
-    fun blank_edit(){
-        if(binding.id.length() == 0)
+
+    fun blank_edit() {
+        if (binding.id.length() == 0)
             Toast.makeText(this@SignupActivity, "아이디를 채워주세요.", Toast.LENGTH_SHORT).show()
-        else if(binding.pass.length() == 0)
+        else if (binding.pass.length() == 0)
             Toast.makeText(this@SignupActivity, "비밀번호를 채워주세요.", Toast.LENGTH_SHORT).show()
-        else if(binding.repass.length() == 0)
+        else if (binding.repass.length() == 0)
             Toast.makeText(this@SignupActivity, "비밀번호를 확인해주세요.", Toast.LENGTH_SHORT).show()
-        else if(binding.username.length() == 0)
+        else if (binding.username.length() == 0)
             Toast.makeText(this@SignupActivity, "이름을 채워주세요.", Toast.LENGTH_SHORT).show()
-        else if(binding.phonenumber.length() == 0)
+        else if (binding.phonenumber.length() == 0)
             Toast.makeText(this@SignupActivity, "전화번호를 채워주세요.", Toast.LENGTH_SHORT).show()
-        else if(binding.birth.length() == 0)
+        else if (binding.birth.length() == 0)
             Toast.makeText(this@SignupActivity, "생년월일을 채워주세요.", Toast.LENGTH_SHORT).show()
-        else if(binding.radioMan.isChecked == false || binding.radioWoman.isChecked == false)
+        //둘 중 하나만
+        else if (binding.radioMan.isChecked == false && binding.radioWoman.isChecked == false)
             Toast.makeText(this@SignupActivity, "성별칸을 채워주세요.", Toast.LENGTH_SHORT).show()
+        //세개 다 채워야
+        else if (binding.agree1.isChecked == false || binding.agree2.isChecked == false ||
+                binding.agree3.isChecked == false)
+            Toast.makeText(this@SignupActivity, "이용약관에 동의해주세요.", Toast.LENGTH_SHORT).show()
+        //모든 칸이 채워졌을 때
+        else {
+            mySignupViewModel.sendSignUpInfo("쿼리문", 3)
+        }
     }
-    // 클릭 리스너
+
+    // 클릭 리스너1
     override fun onClick(v: View?) {
-        when(v){
+        when (v) {
             // Signup 버튼을 눌렀을 경우
-            binding.signup-> {
+            binding.signup -> {
+                Log.d(SignupActivity.TAG, "LoginActivity - onCreate Call()")
                 blank_edit()
-                mySignupViewModel.sendSignUpInfo("쿼리문", 3)
+            }
+            //중복확인
+            binding.overlap->{
+                Toast.makeText(this@SignupActivity, "중복확인", Toast.LENGTH_SHORT).show()
+            }
+            //달력선택
+            binding.birthBtn -> {
+                val dlg = DatePickerDialog(this, object : DatePickerDialog.OnDateSetListener {
+                    override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
+                        binding.birth.setText("${year}년 ${month+1}월 ${dayOfMonth}일")
+                    }
+                }, year, month, date)
+                dlg.show()
             }
         }
     }
 }
+
