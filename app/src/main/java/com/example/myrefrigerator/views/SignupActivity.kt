@@ -40,7 +40,6 @@ class SignupActivity : AppCompatActivity(), View.OnClickListener {
         // Log
         Log.e(TAG, "SignupActivity - onCreate Call()")
         // setListener
-        binding.signup.setOnClickListener(this)
         binding.overlap.setOnClickListener(this)
         binding.birthBtn.setOnClickListener(this)
     }
