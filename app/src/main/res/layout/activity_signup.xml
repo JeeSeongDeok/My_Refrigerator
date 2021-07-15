@@ -80,7 +80,7 @@
                                     android:layout_height="match_parent"
                                     android:layout_weight="2"
                                     android:drawablePadding="16dp"
-                                    android:hint="아이디 (이메일 주소)"
+                                    android:hint="아이디 (이메일)"
                                     android:inputType="text"
                                     android:maxLines="1"
                                     android:textColor="@android:color/black"
@@ -209,7 +209,8 @@
                                     android:layout_weight="2"
                                     android:drawablePadding="16dp"
                                     android:hint="생년월일"
-                                    android:inputType="text"
+                                    android:focusable="false"
+                                    android:clickable="false"
                                     android:maxLines="1"
                                     android:textColor="@android:color/black"
                                     android:textSize="16sp" />
@@ -221,10 +222,10 @@
                                     android:layout_weight="1"
                                     android:background="@drawable/login_buttonshape"
                                     android:gravity="center"
-                                    android:text="달력선택하기"
+                                    android:text="달력선택"
                                     android:textAllCaps="false"
                                     android:textColor="#ffffff"
-                                    android:textSize="24sp" />
+                                    android:textSize="20sp" />
 
                             </LinearLayout>
 
