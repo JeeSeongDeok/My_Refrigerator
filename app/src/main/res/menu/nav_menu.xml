@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:title="홈"
+        android:icon="@drawable/ic_baseline_home_24"
+        />
+    <item
+        android:id="@+id/choco"
+        android:title="초코"
+        />
+    <item
+        android:id="@+id/menumenu"
+        android:title="메뉴2"
+        android:icon="@drawable/ic_baseline_camera_alt_24"
+        />
+    <item
+        android:id="@+id/music"
+        android:title="메뉴3"
+        android:icon="@drawable/ic_baseline_build_24"
+        />
+</menu>
