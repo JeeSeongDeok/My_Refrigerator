@@ -41,6 +41,7 @@ class SignupActivity : AppCompatActivity(), View.OnClickListener {
         // setListener
         binding.overlap.setOnClickListener(this)
         binding.birthBtn.setOnClickListener(this)
+        binding.signup.setOnClickListener(this)
     }
 
     fun blank_edit() {
