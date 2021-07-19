@@ -24,6 +24,8 @@ class testActivity : AppCompatActivity() {
         mBinding = ActivityTestBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
 
+    }
+    fun callConnectTest(){
         // RetrofitBuilder를 준비함(http 연결까지 담당
         val call = RetrofitBuilder.ConnetService
         // getStudent를 불러 어떤 형식인지 부른 후 enqueue 실행
@@ -49,6 +51,5 @@ class testActivity : AppCompatActivity() {
             }
 
         })
-
     }
 }
