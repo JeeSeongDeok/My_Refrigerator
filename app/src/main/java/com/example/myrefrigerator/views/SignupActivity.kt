@@ -8,11 +8,10 @@ import android.view.View
 import android.widget.DatePicker
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
-import com.example.myrefrigerator.R
 import com.example.myrefrigerator.databinding.ActivitySignupBinding
-import org.koin.androidx.viewmodel.ext.android.ViewModelStoreOwnerDefinition
-import org.koin.androidx.viewmodel.ext.android.viewModel
+import okhttp3.Call
+import okhttp3.Callback
+import okhttp3.Response
 import java.util.*
 
 
@@ -69,6 +68,10 @@ class SignupActivity : AppCompatActivity(), View.OnClickListener {
         else {
             mySignupViewModel.sendSignUpInfo("쿼리문", 3)
         }
+    }
+    // API 연결, SignupModel로 옮겨갈 예정
+    fun test() {
+
     }
 
     // 클릭 리스너1
