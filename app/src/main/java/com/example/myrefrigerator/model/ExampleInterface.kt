@@ -2,6 +2,7 @@ package com.example.myrefrigerator.model
 
 import retrofit2.Call
 import retrofit2.http.GET
+import retrofit2.http.Headers
 import retrofit2.http.Query
 
 interface ExampleInterface {
@@ -11,4 +12,9 @@ interface ExampleInterface {
     fun getStudent(@Query("school_id") schoolId: Int,
                    @Query("grade") grade: Int,
                    @Query("classroom") classroom: Int): Call<exampleResponse>
+    @GET("user")
+    @Headers("accept: application/json",
+        "content-type: application/json"
+    )
+    fun getUser(): Call<UserInfo>
 }
