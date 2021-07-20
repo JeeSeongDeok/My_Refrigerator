@@ -15,43 +15,43 @@
 
         <!--        처음 로고 리니어-->
         <LinearLayout
-            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:layout_marginTop="10dp"
             android:gravity="center"
             android:orientation="horizontal">
 
             <TextView
-                android:layout_gravity="bottom"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
                 android:text="유통기한 "
                 android:textColor="#1BCA15"
                 android:textSize="20dp" />
 
             <ImageView
-                android:layout_gravity="bottom"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:layout_gravity="bottom"
                 android:background="@mipmap/ic_launcher" />
 
             <TextView
-                android:layout_gravity="bottom"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
                 android:text=" 확인해볼까"
                 android:textSize="20dp" />
 
         </LinearLayout>
 
         <View
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="15dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
             android:layout_width="match_parent"
             android:layout_height="3dp"
-            android:background="#bfbfbf"/>
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="15dp"
+            android:background="#bfbfbf" />
 
         <!--        스크롤뷰-->
         <ScrollView
@@ -305,6 +305,51 @@
                         android:layout_height="wrap_content"
                         android:text="%일 남음"
                         android:textColor="#1BCA15" />
+
+                </LinearLayout>
+
+                <!--                4개의 유통기한 외 모든 유통기한 확인 버튼 리니어-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:gravity="right"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="15dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="유통기한"
+                            android:textColor="#1BCA15"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="확인하러가기"
+                            android:textSize="15dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp">
+
+                        <Button
+                            android:id="@+id/watchShelfLife"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:background="@mipmap/ic_launcher" />
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
