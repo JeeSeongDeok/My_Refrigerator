@@ -5,24 +5,23 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyRefrigerator">
-        <activity android:name=".views.testActivity">
+
+        <activity android:name=".views.MainActivity">
 
         </activity>
-        <activity android:name=".views.MainActivity">
+        <activity android:name=".views.SignupActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".views.SignupActivity">
-
         </activity>
     </application>
 
