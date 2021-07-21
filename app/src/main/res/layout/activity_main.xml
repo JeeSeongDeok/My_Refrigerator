@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         app:menu="@menu/nav_menu"
         android:id="@+id/myBottomNav"
-        app:backgroundTint="@color/colorAccent"/>
+        app:backgroundTint="@color/white"/>
 
 
 </LinearLayout>
