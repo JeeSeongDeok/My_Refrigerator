@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/homeFragment"
+    android:background="@color/white"
     tools:context="com.example.myrefrigerator.FRAGMENTS.HomeFragment">
 
     <!-- 전체 테두리 -->

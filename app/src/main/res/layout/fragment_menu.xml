@@ -69,31 +69,11 @@
                     android:layout_height="wrap_content">
 
                     <Button
+                        android:id="@+id/addFood"
                         android:layout_width="match_parent"
                         android:layout_height="150dp"
-                        android:textSize="20dp"
-                        android:text="음식 사진 찍기\n아직 설정 덜 함"/>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <Button
-                            android:layout_width="0dp"
-                            android:layout_weight="0.5"
-                            android:layout_height="150dp"
-                            android:textSize="20dp"
-                            android:text="음식 사진 찍기\n아직 설정 덜 함"/>
-
-                        <Button
-                            android:layout_width="0dp"
-                            android:layout_weight="0.5"
-                            android:layout_height="150dp"
-                            android:textSize="20dp"
-                            android:text="음식 사진 찍기\n아직 설정 덜 함"/>
-
-                    </LinearLayout>
+                        android:textSize="40dp"
+                        android:text="음식 입력 하기"/>
 
                 </LinearLayout>
 
