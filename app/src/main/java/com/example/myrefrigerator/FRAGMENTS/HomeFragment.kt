@@ -1,17 +1,22 @@
 package com.example.myrefrigerator.FRAGMENTS
 
 import android.animation.ValueAnimator
+import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.content.Context
+import android.content.DialogInterface
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.DatePicker
+import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.airbnb.lottie.*
+import com.example.myrefrigerator.R
 import com.example.myrefrigerator.databinding.FragmentHomeBinding
 import com.example.myrefrigerator.views.SignupActivity
 
@@ -55,7 +60,6 @@ class HomeFragment : Fragment(), View.OnClickListener {
 
         //setOnClickListener설정
         binding.watchShelfLife.setOnClickListener(this)
-
         return mBinding?.root
     }
 
