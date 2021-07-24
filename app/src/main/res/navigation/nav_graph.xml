@@ -9,7 +9,11 @@
         android:id="@+id/homeFragment"
         android:name="com.example.myrefrigerator.FRAGMENTS.HomeFragment"
         android:label="fragment_home"
-        app:destination="@id/menuFragment" />
+        app:destination="@id/menuFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/menuFragment"
@@ -17,10 +21,17 @@
         android:label="fragment_menu"
         tools:layout="@layout/fragment_menu" >
     <action
-        android:id="@+id/action_musicFragment_to_menuFragment"
+        android:id="@+id/action_musicFragment"
         app:destination="@id/musicFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_musicFragment2"
+            app:destination="@id/musicFragment" />
     </fragment>
-
+    <fragment
+        android:id="@+id/musicFragment"
+        android:name="com.example.myrefrigerator.FRAGMENTS.musicFragment"
+        android:label="fragment_music"
+        tools:layout="@layout/fragment_music" />
 
 
 </navigation>
