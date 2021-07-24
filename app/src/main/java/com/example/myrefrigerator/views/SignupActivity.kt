@@ -8,6 +8,8 @@ import android.view.View
 import android.widget.DatePicker
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.fragment.NavHostFragment
+import com.example.myrefrigerator.R
 import com.example.myrefrigerator.databinding.ActivitySignupBinding
 import okhttp3.Call
 import okhttp3.Callback
@@ -62,7 +64,7 @@ class SignupActivity : AppCompatActivity(), View.OnClickListener {
             Toast.makeText(this@SignupActivity, "성별칸을 채워주세요.", Toast.LENGTH_SHORT).show()
         //세개 다 채워야
         else if (binding.agree1.isChecked == false || binding.agree2.isChecked == false ||
-                binding.agree3.isChecked == false)
+            binding.agree3.isChecked == false)
             Toast.makeText(this@SignupActivity, "이용약관에 동의해주세요.", Toast.LENGTH_SHORT).show()
         //모든 칸이 채워졌을 때
         else {
