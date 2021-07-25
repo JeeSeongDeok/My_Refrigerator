@@ -42,9 +42,11 @@ class MainActivity : AppCompatActivity() {
         val bottomNavigationView = findViewById<View>(R.id.myBottomNav) as BottomNavigationView
         bottomNavigationView.setOnNavigationItemSelectedListener {item ->
             when (item.itemId) {
+                //bottomNavigation의 첫번째 버튼 클릭시 homeFragment로 이동
                 R.id.homeFragment->{
                     changeFragment(Home)
                 }
+                //bottomNavigation의 두번째 버튼 클릭시 menuFragment가 아닌 dialog_addfood call
                 R.id.menuFragment -> {
                     val builder = AlertDialog.Builder(this)
                     val dialogView = layoutInflater.inflate(R.layout.dialog_addfood, null)
@@ -57,6 +59,7 @@ class MainActivity : AppCompatActivity() {
                         }
                         .show()
                 }
+                //bottomNavigation의 세번째 버튼 클릭시 musicFragment로 이동
                 R.id.musicFragment->{
                     changeFragment(Music)
                 }
