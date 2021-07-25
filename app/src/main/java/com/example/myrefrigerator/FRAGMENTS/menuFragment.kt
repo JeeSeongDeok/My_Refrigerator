@@ -12,7 +12,8 @@ import androidx.fragment.app.Fragment
 import com.example.myrefrigerator.R
 import com.example.myrefrigerator.databinding.FragmentMenuBinding
 
-class menuFragment : Fragment(), View.OnClickListener {
+//따로 dialog띄워서 필요없는 소스 지웠습니다.
+class menuFragment : Fragment() {
     private var mBinding: FragmentMenuBinding? = null
     lateinit var binding: FragmentMenuBinding
     val TAG: String = "로그"
@@ -25,32 +26,11 @@ class menuFragment : Fragment(), View.OnClickListener {
         binding = FragmentMenuBinding.inflate(inflater, container, false)
         mBinding = binding
 
-        //setOnClickListener
-        binding.addFood.setOnClickListener(this)
-
         return mBinding?.root
     }
 
     override fun onDestroyView() {
         mBinding = null
         super.onDestroyView()
-    }
-
-    override fun onClick(v: View?) {
-        when (v) {
-            //음식 추가하는 dialog call
-            binding.addFood -> {
-                val builder = AlertDialog.Builder(activity)
-                val dialogView = layoutInflater.inflate(R.layout.dialog_addfood, null)
-                builder.setView(dialogView)
-                    .setPositiveButton("확인") { dialogInterface, i ->
-                        Log.d(TAG, "HomeFragment - Positive Call()")
-                    }
-                    .setNegativeButton("취소") { dialogInterface, i ->
-                        /* 취소일 때 아무 액션이 없으므로 빈칸 */
-                    }
-                    .show()
-            }
-        }
     }
 }

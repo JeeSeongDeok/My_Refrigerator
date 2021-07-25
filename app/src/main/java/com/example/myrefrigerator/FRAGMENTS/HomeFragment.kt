@@ -5,6 +5,7 @@ import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.content.Context
 import android.content.DialogInterface
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
@@ -18,6 +19,7 @@ import androidx.fragment.app.Fragment
 import com.airbnb.lottie.*
 import com.example.myrefrigerator.R
 import com.example.myrefrigerator.databinding.FragmentHomeBinding
+import com.example.myrefrigerator.views.AllShelfLife
 import com.example.myrefrigerator.views.SignupActivity
 
 
@@ -105,10 +107,10 @@ class HomeFragment : Fragment(), View.OnClickListener {
     //setOnClickListener
     override fun onClick(v: View?) {
         when (v) {
-            //WatchShelfLife 버튼 누르면 4개 외의 모든 유통기한을 모아놓은 레이어로 이동
-            //아직 구현하지 않음
+            //WatchShelfLife 버튼 누르면 4개 외의 모든 유통기한을 모아놓은 activity로 이동
             binding.watchShelfLife -> {
-                Log.d(TAG, "HomeFragment - onClick Call()")
+                val intent = Intent(activity, AllShelfLife::class.java)
+                startActivity(intent)
             }
         }
     }
