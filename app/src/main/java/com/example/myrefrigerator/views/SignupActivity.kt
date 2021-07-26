@@ -9,6 +9,8 @@ import android.view.View
 import android.widget.DatePicker
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.fragment.NavHostFragment
+import com.example.myrefrigerator.R
 import com.example.myrefrigerator.databinding.ActivitySignupBinding
 import okhttp3.Call
 import okhttp3.Callback
@@ -43,6 +45,7 @@ class SignupActivity : AppCompatActivity(), View.OnClickListener {
         binding.overlap.setOnClickListener(this)
         binding.birthBtn.setOnClickListener(this)
         binding.signup.setOnClickListener(this)
+
         // observer
         mySignupViewModel.resultLiveData.observe(this){
             if(it == true){

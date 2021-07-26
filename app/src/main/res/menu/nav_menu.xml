@@ -7,12 +7,12 @@
         />
     <item
         android:id="@+id/menuFragment"
-        android:title="메뉴2"
+        android:title="음식추가"
         android:icon="@drawable/ic_baseline_camera_alt_24"
         />
     <item
         android:id="@+id/musicFragment"
-        android:title="메뉴3"
+        android:title="설정"
         android:icon="@drawable/ic_baseline_build_24"
         />
 </menu>
