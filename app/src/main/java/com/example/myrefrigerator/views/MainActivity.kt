@@ -1,16 +1,27 @@
 package com.example.myrefrigerator.views
 
+import android.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
+import android.view.MenuItem
+import android.view.View
 import androidx.appcompat.widget.Toolbar
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
+import com.example.myrefrigerator.FRAGMENTS.HomeFragment
+import com.example.myrefrigerator.FRAGMENTS.menuFragment
+import com.example.myrefrigerator.FRAGMENTS.musicFragment
 import com.example.myrefrigerator.R
 import com.example.myrefrigerator.databinding.ActivityMainBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 class MainActivity : AppCompatActivity() {
+    private val Home = HomeFragment()
+    private val Music = musicFragment()
     companion object {
         const val TAG: String = "로그"
     }
@@ -28,8 +39,42 @@ class MainActivity : AppCompatActivity() {
 
         NavigationUI.setupWithNavController(mBinding.myBottomNav, navController)
 
-        //
+        val bottomNavigationView = findViewById<View>(R.id.myBottomNav) as BottomNavigationView
+        bottomNavigationView.setOnNavigationItemSelectedListener {item ->
+            when (item.itemId) {
+                //bottomNavigation의 첫번째 버튼 클릭시 homeFragment로 이동
+                R.id.homeFragment->{
+                    changeFragment(Home)
+                }
+                //bottomNavigation의 두번째 버튼 클릭시 menuFragment가 아닌 dialog_addfood call
+                R.id.menuFragment -> {
+                    val builder = AlertDialog.Builder(this)
+                    val dialogView = layoutInflater.inflate(R.layout.dialog_addfood, null)
+                    builder.setView(dialogView)
+                        .setPositiveButton("확인") { dialogInterface, i ->
+                            Log.d(MainActivity.TAG, "HomeFragment - Positive Call()")
+                        }
+                        .setNegativeButton("취소") { dialogInterface, i ->
+                            /* 취소일 때 아무 액션이 없으므로 빈칸 */
+                        }
+                        .show()
+                }
+                //bottomNavigation의 세번째 버튼 클릭시 musicFragment로 이동
+                R.id.musicFragment->{
+                    changeFragment(Music)
+                }
+            }
+            true
+        }
     }
 
-
+    private fun changeFragment(fragment:Fragment){
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.my_nav_host, fragment)
+            .commit()
+    }
 }
+
+
+
