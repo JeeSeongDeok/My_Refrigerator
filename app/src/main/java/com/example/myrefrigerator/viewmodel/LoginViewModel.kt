@@ -19,8 +19,10 @@ class LoginViewModel : ViewModel() {
     fun Login(id:String, pw:String){
         // 연결하는 부분 OkHttp3 써서 백엔드랑 연결
         Log.d(TAG, "SingupViewModel - Login Call")
+        var check = false;
 
         val call = RetrofitBuilder.CONNET_SERVICE
+
 
         call.getUser().enqueue(object: Callback<UserInfo>{
             override fun onFailure(call: Call<UserInfo>, t: Throwable) {
