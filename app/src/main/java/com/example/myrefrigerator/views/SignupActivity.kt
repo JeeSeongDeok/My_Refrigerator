@@ -2,6 +2,7 @@ package com.example.myrefrigerator.views
 
 
 import android.app.DatePickerDialog
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -44,34 +45,19 @@ class SignupActivity : AppCompatActivity(), View.OnClickListener {
         binding.overlap.setOnClickListener(this)
         binding.birthBtn.setOnClickListener(this)
         binding.signup.setOnClickListener(this)
-    }
 
-    fun blank_edit() {
-        if (binding.id.length() == 0)
-            Toast.makeText(this@SignupActivity, "아이디를 채워주세요.", Toast.LENGTH_SHORT).show()
-        else if (binding.pass.length() == 0)
-            Toast.makeText(this@SignupActivity, "비밀번호를 채워주세요.", Toast.LENGTH_SHORT).show()
-        else if (binding.repass.length() == 0)
-            Toast.makeText(this@SignupActivity, "비밀번호를 확인해주세요.", Toast.LENGTH_SHORT).show()
-        else if (binding.username.length() == 0)
-            Toast.makeText(this@SignupActivity, "이름을 채워주세요.", Toast.LENGTH_SHORT).show()
-        else if (binding.phonenumber.length() == 0)
-            Toast.makeText(this@SignupActivity, "전화번호를 채워주세요.", Toast.LENGTH_SHORT).show()
-        else if (binding.birth.length() == 0)
-            Toast.makeText(this@SignupActivity, "생년월일을 채워주세요.", Toast.LENGTH_SHORT).show()
-        //둘 중 하나만
-        else if (binding.radioMan.isChecked == false && binding.radioWoman.isChecked == false)
-            Toast.makeText(this@SignupActivity, "성별칸을 채워주세요.", Toast.LENGTH_SHORT).show()
-        //세개 다 채워야
-        else if (binding.agree1.isChecked == false || binding.agree2.isChecked == false ||
-            binding.agree3.isChecked == false)
-            Toast.makeText(this@SignupActivity, "이용약관에 동의해주세요.", Toast.LENGTH_SHORT).show()
-        //모든 칸이 채워졌을 때
-        else {
-            mySignupViewModel.sendSignUpInfo(binding.id.text.toString(), binding.pass.text.toString(), binding.username.text.toString(),
-            binding.phonenumber.text.toString(), binding.birth.text.toString(), 1)
+        // observer
+        mySignupViewModel.resultLiveData.observe(this){
+            if(it == true){
+                // 로그인 성공했을 경우
+                val intent = Intent(applicationContext, LoginActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intent)
+                finish()
+            }
         }
     }
+
 
     // 클릭 리스너1
     override fun onClick(v: View?) {
@@ -94,6 +80,32 @@ class SignupActivity : AppCompatActivity(), View.OnClickListener {
                 }, year, month, date)
                 dlg.show()
             }
+        }
+    }
+    // 빈칸 확인
+    fun blank_edit() {
+        if (binding.id.length() == 0)
+            Toast.makeText(this@SignupActivity, "아이디를 채워주세요.", Toast.LENGTH_SHORT).show()
+        else if (binding.pass.length() == 0)
+            Toast.makeText(this@SignupActivity, "비밀번호를 채워주세요.", Toast.LENGTH_SHORT).show()
+        else if (binding.repass.length() == 0)
+            Toast.makeText(this@SignupActivity, "비밀번호를 확인해주세요.", Toast.LENGTH_SHORT).show()
+        else if (binding.username.length() == 0)
+            Toast.makeText(this@SignupActivity, "이름을 채워주세요.", Toast.LENGTH_SHORT).show()
+        else if (binding.phonenumber.length() == 0)
+            Toast.makeText(this@SignupActivity, "전화번호를 채워주세요.", Toast.LENGTH_SHORT).show()
+        else if (binding.birth.length() == 0)
+            Toast.makeText(this@SignupActivity, "생년월일을 채워주세요.", Toast.LENGTH_SHORT).show()
+        //둘 중 하나만
+        else if (binding.radioMan.isChecked == false && binding.radioWoman.isChecked == false)
+            Toast.makeText(this@SignupActivity, "성별칸을 채워주세요.", Toast.LENGTH_SHORT).show()
+        //세개 다 채워야
+        else if (binding.agree1.isChecked == false || binding.agree2.isChecked == false || binding.agree3.isChecked == false)
+            Toast.makeText(this@SignupActivity, "이용약관에 동의해주세요.", Toast.LENGTH_SHORT).show()
+        //모든 칸이 채워졌을 때
+        else {
+            mySignupViewModel.sendSignUpInfo(binding.id.text.toString(), binding.pass.text.toString(), binding.username.text.toString(),
+                binding.phonenumber.text.toString(), binding.birth.text.toString(), 1)
         }
     }
 }

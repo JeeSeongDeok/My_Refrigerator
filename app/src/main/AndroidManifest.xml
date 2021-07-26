@@ -18,6 +18,9 @@
         <activity android:name=".views.MainActivity">
 
         </activity>
+        <activity android:name=".views.LoginActivity">
+
+        </activity>
         <activity android:name=".views.SignupActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
