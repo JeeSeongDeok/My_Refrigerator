@@ -2,6 +2,11 @@ package com.example.myrefrigerator.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
+import com.example.myrefrigerator.data.UserInfo
+import com.example.myrefrigerator.model.RetrofitBuilder
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class LoginViewModel : ViewModel() {
     companion object {
@@ -15,5 +20,17 @@ class LoginViewModel : ViewModel() {
         // 연결하는 부분 OkHttp3 써서 백엔드랑 연결
         Log.d(TAG, "SingupViewModel - Login Call")
 
+        val call = RetrofitBuilder.CONNET_SERVICE
+
+        call.getUser().enqueue(object: Callback<UserInfo>{
+            override fun onFailure(call: Call<UserInfo>, t: Throwable) {
+                Log.e(TAG, "실패 에러: ${t.message}" )
+            }
+
+            override fun onResponse(call: Call<UserInfo>, response: Response<UserInfo>) {
+                Log.e(TAG, response.body().toString() +"와 성공")
+            }
+
+        })
     }
 }
