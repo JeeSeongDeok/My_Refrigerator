@@ -68,12 +68,9 @@ class SignupActivity : AppCompatActivity(), View.OnClickListener {
             Toast.makeText(this@SignupActivity, "이용약관에 동의해주세요.", Toast.LENGTH_SHORT).show()
         //모든 칸이 채워졌을 때
         else {
-            mySignupViewModel.sendSignUpInfo("쿼리문", 3)
+            mySignupViewModel.sendSignUpInfo(binding.id.text.toString(), binding.pass.text.toString(), binding.username.text.toString(),
+            binding.phonenumber.text.toString(), binding.birth.text.toString(), 1)
         }
-    }
-    // API 연결, SignupModel로 옮겨갈 예정
-    fun test() {
-
     }
 
     // 클릭 리스너1

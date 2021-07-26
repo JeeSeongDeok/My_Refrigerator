@@ -1,6 +1,7 @@
 package com.example.myrefrigerator.views
 
 import android.app.AlertDialog
+
 import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -11,6 +12,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.EditText
+
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
@@ -26,7 +28,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 class MainActivity : AppCompatActivity() {
     private val Home = HomeFragment()
     private val Music = musicFragment()
-
     companion object {
         const val TAG: String = "로그"
     }
@@ -46,6 +47,7 @@ class MainActivity : AppCompatActivity() {
 
         NavigationUI.setupWithNavController(mBinding.myBottomNav, navController)
 
+
         //bottomNavigationView의 id를 가져와서 클릭 리스너를 생성
         val bottomNavigationView = findViewById<View>(R.id.myBottomNav) as BottomNavigationView
         bottomNavigationView.setOnNavigationItemSelectedListener { item ->
@@ -59,6 +61,7 @@ class MainActivity : AppCompatActivity() {
                     val builder = AlertDialog.Builder(this)
                     val dialogView = layoutInflater.inflate(R.layout.dialog_addfood, null)
                     builder.setView(dialogView)
+
                         //확인버튼 클릭 시, 이름와 유통기한을 AllShelfLife로 보냄
                         .setPositiveButton("확인") { dialogInterface, i ->
                             Log.d(MainActivity.TAG, "HomeFragment - Positive Call()")

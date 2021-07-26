@@ -4,8 +4,6 @@ import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import java.util.*
-import org.koin.*
 
 
 // 싱글톤
@@ -19,8 +17,8 @@ object RetrofitBuilder {
             .addConverterFactory(GsonConverterFactory.create(gson))
     }
     // API서버와 연결 시 Retrofit객체를 구현할 인터페이스를 통해 만든다.
-    val ConnetService: ExampleInterface by lazy{
-        retrofitClient.build().create(ExampleInterface::class.java)
+    val CONNET_SERVICE: APIInterface by lazy{
+        retrofitClient.build().create(APIInterface::class.java)
     }
 
 }
