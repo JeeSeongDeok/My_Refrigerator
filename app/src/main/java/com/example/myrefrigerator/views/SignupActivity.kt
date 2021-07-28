@@ -46,7 +46,7 @@ class SignupActivity : AppCompatActivity(), View.OnClickListener {
         binding.birthBtn.setOnClickListener(this)
         binding.signup.setOnClickListener(this)
 
-        // observer
+        // 옵저버 회원가입 성공여부를 계속 처다본다
         mySignupViewModel.resultLiveData.observe(this){
             if(it == true){
                 // 로그인 성공했을 경우
@@ -100,7 +100,7 @@ class SignupActivity : AppCompatActivity(), View.OnClickListener {
         else if (binding.radioMan.isChecked == false && binding.radioWoman.isChecked == false)
             Toast.makeText(this@SignupActivity, "성별칸을 채워주세요.", Toast.LENGTH_SHORT).show()
         //세개 다 채워야
-        else if (binding.agree1.isChecked == false || binding.agree2.isChecked == false || binding.agree3.isChecked == false)
+        else if (!binding.agree1.isChecked || !binding.agree2.isChecked || !binding.agree3.isChecked)
             Toast.makeText(this@SignupActivity, "이용약관에 동의해주세요.", Toast.LENGTH_SHORT).show()
         //모든 칸이 채워졌을 때
         else {

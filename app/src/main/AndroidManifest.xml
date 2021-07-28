@@ -12,24 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyRefrigerator"
         android:usesCleartextTraffic="true">
-        <activity android:name=".views.AllShelfLife">
-
-        </activity>
+        <activity android:name=".views.AllShelfLife"/>
         <activity android:name=".views.MainActivity">
-
-        </activity>
-        <activity android:name=".views.LoginActivity">
-
-        </activity>
-        <activity android:name=".views.SignupActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".views.SignupActivity"></activity>
-
+        <activity android:name=".views.LoginActivity"/>
+        <activity android:name=".views.SignupActivity"/>
     </application>
 
 </manifest>
