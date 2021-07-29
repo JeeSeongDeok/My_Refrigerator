@@ -11,20 +11,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/foodName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="음식이름입니다"
-            android:textSize="50dp" />
-
-        <TextView
-            android:id="@+id/foodshelflife"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="유통기한입니다"
-            android:textSize="50dp" />
-
         <androidx.recyclerview.widget.RecyclerView
             tools:listitem="@layout/activity_listview"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"

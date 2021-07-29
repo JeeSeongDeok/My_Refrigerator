@@ -5,6 +5,7 @@
     android:id="@+id/musicFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context="com.example.myrefrigerator.FRAGMENTS.musicFragment">
 
     <ScrollView
@@ -13,6 +14,7 @@
 
         <!--        전체리니어-->
         <LinearLayout
+            android:background="@color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -21,7 +23,7 @@
             <LinearLayout
                 android:padding="15dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="100dp"
                 android:orientation="horizontal">
 
 <!--                첫번째 리니어 아들1-->
@@ -72,7 +74,7 @@
             <LinearLayout
                 android:padding="15dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="100dp"
                 android:orientation="horizontal">
 
                 <!--                두번째 리니어 아들1-->
@@ -112,6 +114,53 @@
 
                 </LinearLayout>
 <!--두번째 리니어 끝(소리)-->
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/black"/>
+
+<!--            세번째 리이너 시작-->
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+
+            <Button
+                android:id="@+id/settingSound"
+                android:paddingLeft="15dp"
+                android:gravity="left|center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:text="알림음\n알람음을 설정합니다"
+                android:textSize="20dp"/>
+
+<!--            세번째 리니어 끝-->
+        </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/black"/>
+
+<!--            네번째 리니어 시작-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp">
+
+                <Button
+                    android:id="@+id/settingNickName"
+                    android:paddingLeft="15dp"
+                    android:gravity="left|center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:text="닉네임\n닉네임을 설정하세요"
+                    android:textSize="20dp"/>
+
+<!--                네번째 리니어 끝-->
             </LinearLayout>
 
             <View
