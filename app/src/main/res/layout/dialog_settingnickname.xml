@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:paddingLeft="20dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:textSize="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="닉네임 설정"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp"
+        app:counterEnabled="true"
+        app:counterMaxLength="20"
+        android:textColorHint="#FFB3B3B3">
+
+        <EditText
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/nickName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:drawablePadding="16dp"
+            android:hint="새 닉네임 입력"
+            android:inputType="text"
+            android:maxLines="1"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+</LinearLayout>
