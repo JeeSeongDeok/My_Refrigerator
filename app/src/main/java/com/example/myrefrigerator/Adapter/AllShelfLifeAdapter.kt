@@ -30,11 +30,11 @@ class AllShelfLifeAdapter(val context: Context, private val list:ArrayList<AllSh
     inner class Holder(itemView: View?) : RecyclerView.ViewHolder(itemView!!) {
         val Name = itemView?.findViewById<TextView>(R.id.listxml_foodName)
         val ShelfLife = itemView?.findViewById<TextView>(R.id.listxml_foodAllShelfLife)
-        val Img = itemView?.findViewById<ImageView>(R.id.listxml_foodImageView)
+        //val Img = itemView?.findViewById<ImageView>(R.id.listxml_foodImageView)
 
         fun bind(listView: AllShelfLifeListView, context: Context) {
             /* 나머지 TextView와 String 데이터를 연결한다. */
-            Img?.setImageDrawable(listView.foodImage)
+            //Img?.setImageDrawable(listView.foodImage)
             Name?.text = listView.afoodName
             ShelfLife?.text = listView.afoodAllShelfLife
         }

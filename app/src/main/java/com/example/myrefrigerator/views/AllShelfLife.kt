@@ -34,20 +34,27 @@ class AllShelfLife : AppCompatActivity() {
         mBinding = ActivityAllshelflifeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        var mlist = ArrayList<AllShelfLifeListView>()
         // MainActivity에서 가져온 데이터
-        if (intent.hasExtra("name") && intent.hasExtra("shelfLife")) {
-            val name = intent.getStringExtra("name")
-            val shelfLife = intent.getStringExtra("shelfLife")
-            binding.foodName.setText("이것은${name}")
-            binding.foodshelflife.setText("이것은${shelfLife}")
-            //리사이클뷰
-            var mlist = ArrayList<AllShelfLifeListView>()
-            mlist.add(AllShelfLifeListView(getDrawable(R.mipmap.ic_launcher),name+"", shelfLife+""))
-            //리사이클뷰 어댑터
-            val Adapter = AllShelfLifeAdapter(this, mlist)
-            binding.RecyclerView.adapter = Adapter
-        } else {
-            Log.e(TAG, "가져온 데이터 없음")
-        }
+
+        val name = intent.getStringExtra("name")
+        val shelfLife = intent.getStringExtra("shelfLife")
+        //리사이클뷰
+        mlist.add(AllShelfLifeListView("요플레", "13일 남음"))
+        mlist.add(AllShelfLifeListView("복숭아", "20일 남음"))
+        mlist.add(AllShelfLifeListView("어묵", "15일 남음"))
+        mlist.add(AllShelfLifeListView("치킨소스", "89일 남음"))
+//        mlist.add(
+//            AllShelfLifeListView(
+//                getDrawable(R.mipmap.ic_launcher),
+//                name + "",
+//                shelfLife + ""
+//            )
+//        )
+        //리사이클뷰 어댑터
+        val Adapter = AllShelfLifeAdapter(this, mlist)
+        binding.RecyclerView.adapter = Adapter
+
+
     }
 }
