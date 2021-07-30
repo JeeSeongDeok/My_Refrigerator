@@ -70,18 +70,71 @@ private val retrofitClient: Retrofit.Builder by lazy{
 ### 결과
 <img src = "https://user-images.githubusercontent.com/23256819/127477702-1c603930-9d9d-4363-bcd5-8df5eb95386f.PNG">
 
-### 코드
+### 주요 코드
 <p> 로그인과 같은 방식을 이용해 LoginActivity는 livedata를 옵저버, LoginViewmodel가 retrofit2을 통해 api 서버 연결, 로그인을 성공햇을 경우 livedata값을 바꿈</p>
 
 ## 메인화면
 
 ### 디자인
-<img src = "https://user-images.githubusercontent.com/23256819/127477772-3a18a271-0b8e-4dbb-a186-2ca10b8e721f.png" width = 50% height = 50%>
+<img src = "https://user-images.githubusercontent.com/23256819/127636659-e5cd95d4-82fe-490b-9a58-eec75c99c193.png" width = 50% height = 50%>
+
+### 주요코드
+<p> 막대 그래프는 로티 애니메이션을 사용했다. </p>
+
+```kotlin
+fun LottieAnimationView1(){
+    //서버에서 가져온 음식 이름, 음식이름 실제로 가져왓을 때는 앞의 "음식이름"을 지우고 사용
+    binding.foodName1.setText(firstFoodName)
+    binding.foodLeft1.setText("${firstFood}일 남음")
+    //Lottie 라인을 전체 100중 firstFood * 10인 50만큼만 채운다
+    binding.animationView1.setMaxFrame(firstFood*10)
+    //LottieAnimation 실행
+    binding.animationView1.playAnimation()
+}
+```
+## 음식추가 다이얼로그
+
+### 디자인
+<img src= "https://user-images.githubusercontent.com/23256819/127636521-0d13bb26-ae24-41f4-b6bf-5f3bd4c04cf2.png">
+
+### 주요 코드
+
+<p>  </p>
+
+```kotlin
+val builder = AlertDialog.Builder(this)
+val dialogView = layoutInflater.inflate(R.layout.dialog_addfood, null)
+builder.setView(dialogView)
+    //확인버튼 클릭 시, 이름와 유통기한을 AllShelfLife로 보냄
+    .setPositiveButton("확인") { dialogInterface, i ->
+        Log.d(MainActivity.TAG, "HomeFragment - Positive Call()")
+        //다이어로글에서 음식이름과 유통기한 editText를 가져온다.
+        var Editname = dialogView.findViewById<EditText>(R.id.dialog_foodName)
+        var EditshelfLife = dialogView.findViewById<EditText>(R.id.dialog_foodshelflife)
+        var name = Editname.text.toString()
+        var shelfLife = EditshelfLife.text.toString()
+        //AllShelfLife로 dialog의 음식이름과 유통기한을 보낸다
+        val intent = Intent(this, AllShelfLife::class.java)
+        intent.putExtra("name", name)
+        intent.putExtra("shelfLife", shelfLife)
+        startActivity(intent)
+    }
+    //취소 버튼
+    .setNegativeButton("취소") { dialogInterface, i ->
+        /* 취소일 때 아무 액션이 없으므로 빈칸 */
+        Log.d(MainActivity.TAG, "HomeFragment - Negative Call()")
+    }
+    .show()
+```
 
 ## 설정화면
 
 ### 디자인
-<img src = "https://user-images.githubusercontent.com/23256819/127477779-1f669788-fab2-46ff-b3c7-58fc971a34ec.png" width =50% height =50%>
+<img src = "https://user-images.githubusercontent.com/23256819/127636756-eb230501-47a6-4d63-89d5-270d65215f13.png" width =50% height =50%>
+
+
+
+
 ## API Server 
  Spring boot 사용
 
