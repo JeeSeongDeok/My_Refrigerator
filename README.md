@@ -65,12 +65,12 @@ private val retrofitClient: Retrofit.Builder by lazy{
 
 ## 회원가입
 
-### 주요 코드
+### 코드
 <p> 로그인과 같은 방식을 이용해 LoginActivity는 livedata를 옵저버, LoginViewmodel가 retrofit2을 통해 api 서버 연결, 로그인을 성공햇을 경우 livedata값을 바꿈</p>
 
 ## 메인화면
 
-### 주요코드
+### 코드
 <p> 막대 그래프는 로티 애니메이션을 사용했다. </p>
 
 ```kotlin
@@ -85,10 +85,7 @@ fun LottieAnimationView1(){
 }
 ```
 ## 음식추가 다이얼로그
-
-
-### 주요 코드
-
+### 코드
 <p>  </p>
 
 ```kotlin
@@ -116,8 +113,6 @@ builder.setView(dialogView)
     }
     .show()
 ```
-
-
 
 
 ## API Server 
