@@ -1,15 +1,17 @@
+<p align=center>
+<img src = "https://user-images.githubusercontent.com/23256819/127474829-1bfb391e-ad0c-4997-a0b2-1b19f43d1adf.png" width=150 height=300>
+<img src = "https://user-images.githubusercontent.com/23256819/127477223-2b53cb17-4d71-4f70-a6ed-0061a1192457.png" width=150 height=300>
+<img src = "https://user-images.githubusercontent.com/23256819/127477233-4b5aa818-e000-4bfb-b8a5-f600886a65a8.png" width=150 height=300>
+<img src = "https://user-images.githubusercontent.com/23256819/127636659-e5cd95d4-82fe-490b-9a58-eec75c99c193.png" width=150 height=300>
+<img src = "https://user-images.githubusercontent.com/23256819/127636756-eb230501-47a6-4d63-89d5-270d65215f13.png" width=150 height=300>
+</p>
+
 # My_Refrigerator
 <p> K-Hackathon 공모전에 참가하기 위해서 개발한 냉장고 관리 어플리케이션이다. </p>
 <p> 혼자살거나 일상이 바빠서 냉장고 관리를 제대로 하지 못하는 사람들을 위해 개발한 어플리케이션이다.</p>
 <p> MVVM 아키텍처를 이용해서 유지보수가 쉽도록 만들었다.</p>
 
 ## 로그인 화면
-### 디자인
-<img src = "https://user-images.githubusercontent.com/23256819/127474829-1bfb391e-ad0c-4997-a0b2-1b19f43d1adf.png" width=50% height= 20%>
-
-### 결과
-<img src = "https://user-images.githubusercontent.com/23256819/127477410-82e8691b-7e85-4bfb-b4d0-6005c3b147a2.PNG">
-
 ### 코드
 
 <p> signupActivity는 뷰 모델에 있는 live date가 변하는지 계속 확인함 </p>
@@ -63,20 +65,10 @@ private val retrofitClient: Retrofit.Builder by lazy{
 
 ## 회원가입
 
-### 디자인
-<img src = "https://user-images.githubusercontent.com/23256819/127477223-2b53cb17-4d71-4f70-a6ed-0061a1192457.png" width=50% height= 30%>
-<img src = "https://user-images.githubusercontent.com/23256819/127477233-4b5aa818-e000-4bfb-b8a5-f600886a65a8.png" width=50% height=30%>
-
-### 결과
-<img src = "https://user-images.githubusercontent.com/23256819/127477702-1c603930-9d9d-4363-bcd5-8df5eb95386f.PNG">
-
 ### 주요 코드
 <p> 로그인과 같은 방식을 이용해 LoginActivity는 livedata를 옵저버, LoginViewmodel가 retrofit2을 통해 api 서버 연결, 로그인을 성공햇을 경우 livedata값을 바꿈</p>
 
 ## 메인화면
-
-### 디자인
-<img src = "https://user-images.githubusercontent.com/23256819/127636659-e5cd95d4-82fe-490b-9a58-eec75c99c193.png" width = 50% height = 50%>
 
 ### 주요코드
 <p> 막대 그래프는 로티 애니메이션을 사용했다. </p>
@@ -94,8 +86,6 @@ fun LottieAnimationView1(){
 ```
 ## 음식추가 다이얼로그
 
-### 디자인
-<img src= "https://user-images.githubusercontent.com/23256819/127636521-0d13bb26-ae24-41f4-b6bf-5f3bd4c04cf2.png">
 
 ### 주요 코드
 
@@ -126,11 +116,6 @@ builder.setView(dialogView)
     }
     .show()
 ```
-
-## 설정화면
-
-### 디자인
-<img src = "https://user-images.githubusercontent.com/23256819/127636756-eb230501-47a6-4d63-89d5-270d65215f13.png" width =50% height =50%>
 
 
 
